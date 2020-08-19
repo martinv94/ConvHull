@@ -11,9 +11,9 @@ This implementation finds less extreme points overall, due to rounding, but scal
 
 ## Biological Examples
 
-To compare precision and run time, we use both implementations to calculate production envelopes of the genome-scale metabolic model of *E. coli* (iJO1366)[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3261703/] and its core model (EColiCore2)[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5206746/]. 
+To compare precision and run time, we use both implementations to calculate production envelopes of the genome-scale metabolic model of *E. coli* [iJO1366](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3261703/) and its core model [EColiCore2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5206746/). 
 
-To calculate multi-dimensional production envelopes of the syntropic exchange reactions of a microbial communities, we apply the floating point arithmetic implementation to a (biogas-producing community model)[https://biotechnologyforbiofuels.biomedcentral.com/articles/10.1186/s13068-016-0429-x].
+To calculate multi-dimensional production envelopes of the syntropic exchange reactions of a microbial communities, we apply the floating point arithmetic implementation to a [biogas-producing community model](https://biotechnologyforbiofuels.biomedcentral.com/articles/10.1186/s13068-016-0429-x).
 
 
 
