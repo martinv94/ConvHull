@@ -1,0 +1,46 @@
+%% Delete
+addpath('/home/helena/cobratoolbox')
+initCobraToolbox
+cd '/home/helena/postdoc/CHM/DOUBLE/examples/EColi'
+addpath('/opt/gurobi810/linux64/matlab/') 
+gurobi_setup
+
+%This script requires gurobi to be set up for matlab 
+%The cobratoolbox is used to load the model
+modelFull = readCbModel('ECFull.xml');
+modelCore = readCbModel('ECC2.xml');
+%modelCore = readCbModel('ECcompressed.xml');
+dimsCore = [5,6]; %5,6,12,15,22,32
+%dimsCore = [1,3]; %1,3,72,46,25,20
+dimsFull = [7,36,124,138,208,293]; %7,36,124,138,208,293
+
+dims = dimsFull;
+model = modelFull;
+
+Aeq = model.S;
+beq = zeros(size(Aeq,1));
+lbs = model.lb;
+ubs = model.ub;
+
+% %Load the compressed (core) model
+% Aeq = load('ECcp_Aeq.txt'); %stoichiometric matrix
+% dom = load('ECcp_domain.txt');
+% dims = [1,3,72,46,25]; %dimensions for the reactions of interest %1,3,72,46,25,20
+% 
+% %Load the full (genome-scale) model
+% Aeq = load('iJ01366_Aeq.txt'); %stoichiometric matrix
+% dom = transpose(load('iJ01366_domain.txt'));
+% dims = [7,36]; %7,36,124,138,208,293
+% 
+% %Set the upper and lower bounds
+% lbs = dom(:,1); %lower bounds
+% ubs = dom(:,2); %upper bounds
+
+%% Run double-precision CHM implementation on the E. coli models
+cd ../../chm
+p1 = 9; %numerical accuracy parameter 
+p2 = 5; %numerical comparison parameter
+tic
+CH=computeCH(Aeq,lbs,ubs,dims,p1,p2,1,1);
+toc
+
