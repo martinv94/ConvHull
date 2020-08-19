@@ -29,6 +29,8 @@ function IncrementalRefinement(polyt)
         nt_ids = all_ids(nt_chull);
         for nt_id=nt_ids
             nt = find(cell2mat(chull(1,:))==nt_id);
+            %disp(nt)
+            %disp(size(chull))
             if cell2mat(chull(end,nt)) ~=0
                 h = chull{2,nt}{1};
                 h0 = chull{2,nt}{2};
@@ -53,6 +55,7 @@ function IncrementalRefinement(polyt)
                 end
             end     
         end
+        %disp(size(ePoints))
         % Reset back to the original tolerance if terminal HPs were found
         new_non_term = find(cell2mat(chull(end,:))==1);
         if counter >= 1 && sum(ismember(non_term,new_non_term)) ~= size(new_non_term,2)

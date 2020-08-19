@@ -1,10 +1,9 @@
 %This script requires gurobi to be set up for matlab 
-
 % Load the Model
 
-% % The cobratoolbox is used to load the SBML model (.xml)
-% model = readCbModel('iJ01366.xml');
-% dims = [7,36,124,138,208,293];
+% % The cobratoolbox is used to load the SBML model 
+% model = readCbModel('iJO1366.mat');
+% dims = [14,88,262,92,423,341];
 % Aeq = model.S;
 % beq = zeros(size(Aeq,1));
 % lbs = model.lb;
@@ -22,6 +21,7 @@ ubs = dom(:,2); %upper bounds
 cd ../../chm
 p1 = 12; %numerical accuracy parameter 
 p2 = 8; %numerical comparison parameter
+disp('start chm...')
 tic
 CH=computeCH(Aeq,lbs,ubs,dims,p1,p2,0,1);
 toc
