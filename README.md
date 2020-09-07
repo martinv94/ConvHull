@@ -12,7 +12,7 @@ The MATLAB implementation was tested on MATLAB R2020a using `gurobi` (version 9.
 
 The Python implementation was tested on Python 3.7.6 using `gurobi` (version 9.0.2) for double-precision linear optimization. 
 
-The floating point arithmetic implementations find less extreme points overall, due to rounding, but scales easily to higher dimensions on genome-scale metabolic models (tested for up to 6 reactions on interest).
+The floating point arithmetic implementations find less extreme points overall, due to rounding, but scale easily to higher dimensions on genome-scale metabolic models (tested for up to 6 reactions on interest).
 
 Preliminary run-time differences between the MATLAB and the Python implementation suggest that the MATLAB implementation runs slightly faster, however, both floating-point arithmetic implementations outperform the run-time of the exact implementation by orders of magnitude. 
 
