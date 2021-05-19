@@ -10,9 +10,9 @@ def compute_CH(fname, dims, output):
     Computes the convex hull for production envelopes of metabolic network. Solution is 
     the list of hyperplanes and set of extreme points of the Convex hull. Inputs are:
     * fname: name of file without extension (must be the same for all files
-      - fname.r: list of reaction names - order must follow that of S columns
-      - fname.S: Stoichiometric matrix
-      - fname.d : lb ub for each reaction
+      - fname_r.txt: list of reaction names - order must follow that of S columns
+      - fname_S.txt: Stoichiometric matrix
+      - fname_d.txt : lb ub for each reaction
     * dims: list of indices for the dimensions onto which the CH should be computed
     """
     global RIDS
@@ -196,7 +196,7 @@ def read_problem(fname):
     probl = {}
     # read reaction names
     reac_names = []
-    infile = open(fname + ".r", "r")
+    infile = open(fname + "_r.txt", "r")
     for line in infile.readlines():
         line = line.strip()
         reac_names.append(line)
@@ -205,7 +205,7 @@ def read_problem(fname):
     # read upper and lower bounds of reactions (domain)
     lbs = []
     ubs = []
-    infile = open(fname + ".d", "r")
+    infile = open(fname + "_d.txt", "r")
     for line in infile.readlines():
         line = line.strip()
         info = line.split()
@@ -215,7 +215,7 @@ def read_problem(fname):
     probl["domain"] = [lbs, ubs]
     # read stoichiometric matrix. Rows=metabolites, columns=reactions
     S = []
-    infile = open(fname + ".S", "r")
+    infile = open(fname + "_S.txt", "r")
     for line in infile.readlines():
         line = line.strip()
         row = []
