@@ -1,0 +1,13 @@
+# VSCode Files
+.vscode/
+.code-workspace
+
+# OS X
+.DS_Store
+
+# Jupyter Notebook 
+.ipynb_checkpoints/
+
+# Python 
+__pycache__/
+*.pyc
