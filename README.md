@@ -1,23 +1,10 @@
 # Convex Hull Method (CHM) 
 Using concepts from computational geometry, these CHM implementations allow for the calculation of multi-dimensional production envelopes in large metabolic models. 
 
-# Exact Implementation
-This is a python implementation tested on Python 3.6.9 using `QSopt` (version 2.5.10) for exact linear optimization. 
+## Exact Implementation
+This is a python implementation tested on Python 3.6.9 using `Qsopt` (version 2.5.10) for exact linear optimization. 
 
-### Dependencies
-The [python-qsoptex](https://github.com/jonls/python-qsoptex) module requires the [GMP](https://gmplib.org/) and [QSopt_ex](https://github.com/jonls/qsopt-ex) libraries to be installed.
-
-- Debian:
-    ```
-    apt-get install libgmp3-dev
-    apt-get install libqsopt-ex-dev
-    ```
-### Python Requirements
-```
-pip3 install -r req_exact.txt
-```
-
-# Floating-point Arithmetic Implementation (Double-Precision) 
+## Floating-point Arithmetic Implementation (Double-Precision) 
 
 Here we provide a Python and a MATLAB implementation. 
 
@@ -38,10 +25,11 @@ To compare precision and run time, we use both implementations to calculate prod
 To calculate multi-dimensional production envelopes of the syntropic exchange reactions of a microbial communities, we apply the floating point arithmetic implementation to a [biogas-producing community model](https://biotechnologyforbiofuels.biomedcentral.com/articles/10.1186/s13068-016-0429-x).
 
 
-### Dependencies
-Install [Gurobi Optimizer](https://www.gurobi.com/downloads/gurobi-optimizer-eula/) version 9.0.2 for MATLAB and Python.
 
-### Python Requirements
-```
-pip3 install -r req_double.txt
-```
+
+
+
+
+
+
+
